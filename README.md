@@ -12,6 +12,15 @@ Quota Dock 是一个 Windows 桌面额度面板，集中展示 DeepSeek、ChatGP
 - 点击最小化按钮后收进 Windows 右下角通知区，点击通知区图标即可恢复；
 - 按住 Shift 拖动窗口标题区可移动面板。
 
+## 安装
+
+1. 打开 [Releases 页面](https://github.com/shixiliya1/quota-dock/releases/latest)。
+2. 下载最新版本的 `Quota Dock <版本号>.exe`。
+3. 双击运行即可。这是便携版，不需要安装向导。
+4. Windows 如果显示 SmartScreen 提示，选择“更多信息”后再选择“仍要运行”。该程序目前没有代码签名证书。
+
+首次打开后，可在齿轮设置中连接 DeepSeek、OpenCode Go 和 ChatGPT Plus；点击最小化按钮后，应用会留在 Windows 右下角通知区。
+
 ## 运行
 
 需要 Node.js 22 或更高版本和 pnpm。
