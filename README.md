@@ -12,6 +12,7 @@ Quota Dock 是一个 Windows 桌面额度面板，集中展示 DeepSeek、ChatGP
 - 根据你设置的月度美元额度，估算 OpenCode Go 的美元余量；
 - 支持添加自定义 JSON 额度接口；
 - 点击最小化按钮后收进 Windows 右下角通知区，点击通知区图标即可恢复；
+- 默认随 Windows 启动，可通过通知区菜单的“开机自动启动”开关调整；
 - 按住 Shift 拖动窗口标题区可移动面板。
 
 ## 安装

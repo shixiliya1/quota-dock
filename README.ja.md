@@ -12,6 +12,7 @@ Quota Dock は、DeepSeek、ChatGPT Plus、OpenCode Go、およびカスタム A
 - 設定した月額 USD と月間利用率から、OpenCode Go の残り USD 枠を推定します。
 - カスタム JSON 利用枠エンドポイントを追加できます。
 - 最小化すると Windows の通知領域に入り、トレイアイコンから復元できます。
+- 既定で Windows 起動時に自動起動し、トレイメニューの「Windows と同時に起動」で切り替えられます。
 - Shift キーを押しながらタイトル領域をドラッグすると、パネルを移動できます。
 
 ## インストール

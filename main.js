@@ -301,11 +301,23 @@ function showMainWindow() {
   mainWindow.focus()
 }
 
+function autoLaunchEnabled() {
+  return readConfig().autoLaunch !== false
+}
+
+function setAutoLaunch(enabled) {
+  const config = readConfig()
+  config.autoLaunch = enabled
+  writeConfig(config)
+  if (app.isPackaged) app.setLoginItemSettings({ openAtLogin: enabled })
+}
+
 function createTray() {
   tray = new Tray(createTrayIcon())
   tray.setToolTip('Quota Dock')
   tray.setContextMenu(Menu.buildFromTemplate([
     { label: '显示额度仪表', click: showMainWindow },
+    { label: '开机自动启动', type: 'checkbox', checked: autoLaunchEnabled(), click: (item) => setAutoLaunch(item.checked) },
     { type: 'separator' },
     { label: '退出', click: () => app.quit() },
   ]))
@@ -338,6 +350,7 @@ function openChatGptLogin() {
 }
 
 app.whenReady().then(() => {
+  setAutoLaunch(autoLaunchEnabled())
   createMainWindow()
   createTray()
   screen.on('display-metrics-changed', placeWindow)

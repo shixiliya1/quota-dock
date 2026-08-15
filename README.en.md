@@ -12,6 +12,7 @@ Quota Dock is a compact Windows desktop dashboard for checking local usage and q
 - Estimates remaining OpenCode Go credit in USD from the monthly amount you configure.
 - Supports custom JSON quota endpoints.
 - Minimizes to the Windows notification area; click its tray icon to restore it.
+- Starts with Windows by default; change it with the "Start with Windows" checkbox in the tray menu.
 - Hold Shift and drag the title area to move the panel.
 
 ## Installation
