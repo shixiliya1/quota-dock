@@ -1,5 +1,7 @@
 # Quota Dock
 
+[中文](README.md) · [English](README.en.md) · [日本語](README.ja.md)
+
 Quota Dock 是一个 Windows 桌面额度面板，集中展示 DeepSeek、ChatGPT Plus、OpenCode Go 与自定义 AI 供应商的本地额度信息。
 
 ## 功能
