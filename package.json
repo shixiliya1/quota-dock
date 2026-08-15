@@ -1,0 +1,29 @@
+{
+  "name": "quota-dock",
+  "version": "0.5.2",
+  "private": true,
+  "author": "shixiliya1",
+  "description": "A Windows edge dock for DeepSeek, ChatGPT Plus, and OpenCode Go usage.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "io.github.quotadock.app",
+    "productName": "Quota Dock",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}

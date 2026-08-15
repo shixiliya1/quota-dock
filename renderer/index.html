@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quota Dock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="dock" class="dock">
+      <section class="panel" aria-label="AI 额度面板">
+        <header>
+          <div><p class="eyebrow">LOCAL TELEMETRY</p><h1>额度仪表</h1></div>
+          <div class="actions"><button id="minimize" title="最小化">−</button><button id="refresh" title="刷新">↻</button><button id="settings" title="设置">⚙</button><button id="quit" title="退出">×</button></div>
+        </header>
+        <p id="updated" class="updated">等待读取…</p>
+        <div id="cards" class="cards"></div>
+        <footer><span>按住 Shift 拖动 · 密钥仅保存在此电脑</span></footer>
+      </section>
+    </main>
+    <dialog id="settingsDialog">
+      <form method="dialog" id="settingsForm">
+        <div class="dialog-head"><div><p class="eyebrow">CONNECTIONS</p><h2>连接额度来源</h2></div><button value="cancel" class="plain">×</button></div>
+        <label>DeepSeek API Key<input id="deepseekKey" type="password" autocomplete="off" placeholder="留空则保持原设置" /></label>
+        <label>OpenCode Go API Key<input id="openCodeKey" type="password" autocomplete="off" placeholder="留空则保持原设置" /></label>
+        <label>OpenCode Go 月度额度（USD）<input id="openCodeMonthlyBudget" type="number" min="0.01" step="0.01" placeholder="例如 20" /></label>
+        <p class="hint">两把 API Key 会使用 Windows 加密存储。OpenCode 会读取 DSH 的时间额度；美元余量按你填写的月度金额与本月使用比例计算。ChatGPT 不保存 Token，而是保留在应用自己的登录会话中。</p>
+        <section class="custom-section"><div><p class="eyebrow">CUSTOM SOURCES</p><strong>自定义供应商</strong></div><button id="addCustomProvider" type="button" class="add-custom">＋ 添加</button></section>
+        <div id="customProviderList" class="custom-provider-list"></div>
+        <button id="connectChatGpt" type="button" class="connect">登录 ChatGPT Plus</button>
+        <div class="dialog-actions"><button value="cancel" class="secondary">取消</button><button id="saveSettings" value="default" class="primary">保存并刷新</button></div>
+      </form>
+    </dialog>
+    <dialog id="customProviderDialog">
+      <form method="dialog" id="customProviderForm">
+        <div class="dialog-head"><div><p class="eyebrow">CUSTOM SOURCE</p><h2>添加供应商</h2></div><button value="cancel" class="plain">×</button></div>
+        <label>显示名称<input id="customName" required maxlength="40" placeholder="例如 Claude Max" /></label>
+        <label>额度接口 URL<input id="customUrl" required type="url" placeholder="https://api.example.com/usage" /></label>
+        <label>Bearer Token（可选）<input id="customToken" type="password" autocomplete="off" placeholder="仅用于这个接口" /></label>
+        <label>显示类型<select id="customKind"><option value="quota">使用百分比</option><option value="balance">余额</option></select></label>
+        <label>数值字段路径<input id="customValuePath" required placeholder="例如 usage.percent" /><small>用点号访问 JSON 字段，如 <code>data.remaining</code>。</small></label>
+        <label id="customResetLabel">重置时间字段路径（可选）<input id="customResetPath" placeholder="例如 usage.reset_at" /></label>
+        <label id="customUnitLabel" hidden>余额单位（可选）<input id="customUnit" placeholder="例如 USD、CNY、次" /></label>
+        <div class="dialog-actions"><button value="cancel" class="secondary">取消</button><button id="saveCustomProvider" value="default" class="primary">添加并读取</button></div>
+      </form>
+    </dialog>
+    <script src="renderer.js"></script>
+  </body>
+</html>
