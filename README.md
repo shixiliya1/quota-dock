@@ -51,3 +51,16 @@ pnpm dist
 - “使用百分比”示例：数值字段 `usage.percent`，可选重置字段 `usage.reset_at`；
 - “余额”示例：数值字段 `data.balance`，可加单位 `USD`；
 - Token 仅使用 Windows 加密存储，并且只随请求发送到你填写的 URL。
+
+## 依赖与致谢
+
+| 项目 | 锁定版本 | 用途 | 许可证 |
+| --- | --- | --- | --- |
+| [Electron](https://www.electronjs.org/) | 39.8.10 | Windows 桌面运行时 | MIT |
+| [electron-builder](https://www.electron.build/) | 26.15.3 | Windows 便携版打包 | MIT |
+
+完整的直接依赖声明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。传递依赖版本由 `pnpm-lock.yaml` 锁定。
+
+## 许可证
+
+本项目以 [MIT License](LICENSE) 开源。

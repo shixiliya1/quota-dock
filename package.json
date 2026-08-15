@@ -3,6 +3,7 @@
   "version": "0.5.2",
   "private": true,
   "author": "shixiliya1",
+  "license": "MIT",
   "description": "A Windows edge dock for DeepSeek, ChatGPT Plus, and OpenCode Go usage.",
   "main": "main.js",
   "scripts": {
